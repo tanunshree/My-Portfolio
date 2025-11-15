@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanushree Nayak | Data & Biotech Analyst</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Set Inter as the primary font and apply base styles */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc; /* Very light gray background for the body */
+            color: #1f2937; /* Dark grey for professional text */
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Gold Color Class (using Tailwind's Amber for a warm, luxurious gold) */
+        .text-gold { color: #f59e0b; } /* Amber 500 */
+        .bg-gold { background-color: #f59e0b; }
+        .border-gold { border-color: #f59e0b; }
+        .hover-bg-gold:hover { background-color: #d97706; } /* Amber 600 for hover */
+        
+        /* Custom scrollbar styling for a cleaner look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        /* General card styling with rounded corners and subtle shadow */
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb; /* Light grey border for definition */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease-in-out; /* Smooth transition for all effects */
+        }
+
+        /* Enhanced hover for cards */
+        .card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Icon Utility to ensure all icons are registered and styled */
+        .lucide-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        
+        /* New: Fixed Vertical Borders for Desktop */
+        @media (min-width: 1024px) {
+            .fixed-border-left {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 1rem;
+                height: 100vh;
+                background: linear-gradient(to top, rgba(245, 158, 11, 0.1), transparent);
+                z-index: 10;
+                pointer-events: none;
+            }
+            .fixed-border-right {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 1rem;
+                height: 100vh;
+                background: linear-gradient(to top, rgba(245, 158, 11, 0.1), transparent);
+                z-index: 10;
+                pointer-events: none;
+            }
+        }
+        
+        /* New: Subtle Pattern for Hero Background */
+        .hero-pattern {
+            background-color: #ffffff;
+            opacity: 1;
+            background-image:  radial-gradient(#e5e7eb 0.7px, transparent 0.7px), radial-gradient(#e5e7eb 0.7px, #ffffff 0.7px);
+            background-size: 28px 28px;
+            background-position: 0 0, 14px 14px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Fixed Side Borders (Visible on large screens) -->
+    <div class="fixed-border-left"></div>
+    <div class="fixed-border-right"></div>
+
+    <!-- Navigation Bar (Dark Frame) -->
+    <nav class="sticky top-0 z-50 bg-gray-900 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#hero" class="text-xl font-bold text-white tracking-wider">TANUSHREE NAYAK <span class="text-gold">| DATA</span></a>
+                <div class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="#about" class="text-gray-300 hover:text-gold transition-colors duration-300">About</a>
+                    <a href="#skills" class="text-gray-300 hover:text-gold transition-colors duration-300">Skills</a>
+                    <a href="#projects" class="text-gray-300 hover:text-gold transition-colors duration-300">Projects</a>
+                    <a href="#experience" class="text-gray-300 hover:text-gold transition-colors duration-300">Experience</a>
+                    <a href="#contact" class="px-3 py-1 bg-gold text-gray-900 font-semibold rounded-full hover:bg-amber-600 transition-all duration-300">Contact</a>
+                </div>
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-400 hover:text-gold">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 px-2 pt-2 pb-3 space-y-1 text-center border-t border-gray-700">
+            <a href="#about" class="block py-2 text-gray-300 hover:text-gold transition-colors duration-300">About</a>
+            <a href="#skills" class="block py-2 text-gray-300 hover:text-gold transition-colors duration-300">Skills</a>
+            <a href="#projects" class="block py-2 text-gray-300 hover:text-gold transition-colors duration-300">Projects</a>
+            <a href="#experience" class="block py-2 text-gold font-semibold transition-colors duration-300">Experience</a>
+            <a href="#contact" class="block py-2 text-gold font-semibold transition-colors duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Subtle Patterned Background) -->
+    <header id="hero" class="pt-20 pb-32 hero-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12 bg-white p-8 rounded-xl shadow-lg">
+            
+            <!-- Left Content -->
+            <div class="md:w-3/5 text-center md:text-left">
+                <p class="text-gray-500 text-lg mb-2">Hello, I'm</p>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight">
+                    TANUSHREE <span class="text-gold">NAYAK</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-light text-gray-700 mt-3 mb-6">
+                    Fusing Biotechnology and Computational Intelligence for <br class="hidden md:inline">
+                    <span class="font-semibold text-gray-800">Data-Driven Scientific Insight.</span>
+                </h2>
+                
+                <!-- Social Links (Desktop/Tablet) -->
+                <div class="flex justify-center md:justify-start space-x-6 mt-8">
+                    <a href="https://www.linkedin.com/in/tanushree-nayak-" target="_blank" class="p-3 text-gray-600 hover:text-gold transition-all duration-300 rounded-full border border-gray-300 hover:border-gold" aria-label="LinkedIn Profile">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://github.com/tanunshree" target="_blank" class="p-3 text-gray-600 hover:text-gold transition-all duration-300 rounded-full border border-gray-300 hover:border-gold" aria-label="GitHub Profile">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                    <a href="mailto:tanushree.12324560@lpu.in" class="p-3 text-gray-600 hover:text-gold transition-all duration-300 rounded-full border border-gray-300 hover:border-gold" aria-label="Email Address">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Image/Placeholder (Gold/Grey Aesthetic) -->
+            <div class="md:w-2/5 flex justify-center">
+                <!-- DNA Helix icon representing Biotechnology -->
+                <div class="w-64 h-64 md:w-80 md:h-80 bg-gray-100 rounded-full border-4 border-gold flex items-center justify-center shadow-xl overflow-hidden">
+                    <i data-lucide="dna" class="w-24 h-24 text-gold"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- About Section (Light Grey BG) -->
+        <section id="about" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">About Me</h2>
+                
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg border-t-4 border-gold card">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        I am an aspiring <strong>Data Analyst</strong> and a motivated B.Tech Biotechnology student with a strong academic foundation (CGPA 8.04). My passion lies at the intersection of complex biological systems and computational data analysis. I am committed to leveraging programming skills in Python, C, and C++ alongside robust biological knowledge to translate raw data into <strong>actionable scientific insights</strong> that drive research and development.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        I am keen to develop a career that blends advanced Data Science techniques—like predictive modeling and machine learning—with biological research to tackle real-world problems, from molecular diagnostics to biodiversity conservation. My adaptability, leadership, and critical thinking skills, honed through diverse academic and volunteer roles, prepare me to excel in highly analytical and collaborative environments. I thrive on challenging problems where <strong>data meets discovery</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section (White BG) -->
+        <section id="education" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Academic Excellence</h2>
+                
+                <div class="max-w-4xl mx-auto space-y-8 relative">
+                    
+                    <!-- LPU Entry -->
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center p-6 bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-xl transition-all duration-300 card">
+                        <div class="md:w-2/5 mb-2 md:mb-0">
+                            <h3 class="text-xl font-semibold text-gold">B.Tech Biotechnology</h3>
+                            <p class="text-gray-600">Lovely Professional University (LPU)</p>
+                        </div>
+                        <div class="md:w-1/5 flex justify-center my-2 md:my-0">
+                            <span class="text-sm font-medium text-gray-900 bg-gold/10 text-gold px-3 py-1 rounded-full">2024 - 2027</span>
+                        </div>
+                        <div class="md:w-2/5 text-left md:text-right">
+                            <p class="text-lg font-bold text-gray-800">Current CGPA: 8.04</p>
+                        </div>
+                    </div>
+
+                    <!-- Class 12 Entry - KV corrected to Kendriya Vidyalaya -->
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center p-6 bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-xl transition-all duration-300 card">
+                        <div class="md:w-2/5 mb-2 md:mb-0">
+                            <h3 class="text-xl font-semibold text-gold">Higher Secondary (Class 12th)</h3>
+                            <p class="text-gray-600">Kendriya Vidyalaya, Kathmandu</p>
+                        </div>
+                        <div class="md:w-1/5 flex justify-center my-2 md:my-0">
+                            <span class="text-sm font-medium text-gray-900 bg-gold/10 text-gold px-3 py-1 rounded-full">Completed</span>
+                        </div>
+                        <div class="md:w-2/5 text-left md:text-right">
+                            <p class="text-lg font-bold text-gray-800">Percentage: 95.5%</p>
+                        </div>
+                    </div>
+
+                    <!-- Class 10 Entry - KV corrected to Kendriya Vidyalaya -->
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center p-6 bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-xl transition-all duration-300 card">
+                        <div class="md:w-2/5 mb-2 md:mb-0">
+                            <h3 class="text-xl font-semibold text-gold">Matriculation (Class 10th)</h3>
+                            <p class="text-gray-600">Kendriya Vidyalaya, Mhow, Madhya Pradesh</p>
+                        </div>
+                        <div class="md:w-1/5 flex justify-center my-2 md:my-0">
+                            <span class="text-sm font-medium text-gray-900 bg-gold/10 text-gold px-3 py-1 rounded-full">Completed</span>
+                        </div>
+                        <div class="md:w-2/5 text-left md:text-right">
+                            <p class="text-lg font-bold text-gray-800">Percentage: 93.6%</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section (Light Grey BG) -->
+        <section id="skills" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Core Skills & Expertise</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    
+                    <!-- 1. Programming & Dry Lab Skills -->
+                    <div class="card p-8 rounded-xl border-t-4 border-gold/50 hover:shadow-xl">
+                        <i data-lucide="code" class="w-8 h-8 text-gold mb-4 lucide-icon"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Programming & Dry Lab</h3>
+                        <ul class="list-none space-y-2 text-gray-700">
+                            <li class="flex items-center"><i data-lucide="chevrons-right" class="w-4 h-4 text-gold lucide-icon"></i>Python (Data Analysis)</li>
+                            <li class="flex items-center"><i data-lucide="chevrons-right" class="w-4 h-4 text-gold lucide-icon"></i>C / C++ (Foundational)</li>
+                            <li class="flex items-center"><i data-lucide="chevrons-right" class="w-4 h-4 text-gold lucide-icon"></i>Bioinformatics Tools (BLAST, NCBI, DAVID, ENRICHR)</li>
+                            <li class="flex items-center"><i data-lucide="chevrons-right" class="w-4 h-4 text-gold lucide-icon"></i>Biopython & PyMOL</li>
+                        </ul>
+                    </div>
+
+                    <!-- 2. Wet Lab & Technical Skills -->
+                    <div class="card p-8 rounded-xl border-t-4 border-gold/50 hover:shadow-xl">
+                        <i data-lucide="flask-conical" class="w-8 h-8 text-gold mb-4 lucide-icon"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Biotech & Wet Lab</h3>
+                        <ul class="list-none space-y-2 text-gray-700">
+                            <li class="flex items-center"><i data-lucide="chevrons-right" class="w-4 h-4 text-gold lucide-icon"></i>Molecular Diagnostics (PCR, RT-PCR, ELISA)</li>
+                            <li class="flex items-center"><i data-lucide="chevrons-right" class="w-4 h-4 text-gold lucide-icon"></i>Flow Cytometry & Blood Analysis</li>
+                            <li class="flex items-center"><i data-lucide="chevrons-right" class="w-4 h-4 text-gold lucide-icon"></i>Total Leukocyte Count (TLC) Assay</li>
+                            <li class="flex items-center"><i data-lucide="chevrons-right" class="w-4 h-4 text-gold lucide-icon"></i>Leukocyte Differentiation (Hemocytometry)</li>
+                            <li class="flex items-center"><i data-lucide="chevrons-right" class="w-4 h-4 text-gold lucide-icon"></i>Aseptic Techniques & DNA Isolation</li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. Soft Skills -->
+                    <div class="card p-8 rounded-xl border-t-4 border-gold/50 hover:shadow-xl">
+                        <i data-lucide="users" class="w-8 h-8 text-gold mb-4 lucide-icon"></i>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Transferable Skills</h3>
+                        <ul class="list-none space-y-2 text-gray-700">
+                            <li class="flex items-center"><i data-lucide="chevrons-right" class="w-4 h-4 text-gold lucide-icon"></i>Analytical & Critical Thinking</li>
+                            <li class="flex items-center"><i data-lucide="chevrons-right" class="w-4 h-4 text-gold lucide-icon"></i>Problem Solving & Research Acumen</li>
+                            <li class="flex items-center"><i data-lucide="chevrons-right" class="w-4 h-4 text-gold lucide-icon"></i>Leadership & Teamwork</li>
+                            <li class="flex items-center"><i data-lucide="chevrons-right" class="w-4 h-4 text-gold lucide-icon"></i>Adaptability & Cross-Functional Communication</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Computational Toolset (White BG) -->
+        <section id="tools" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Key Analytical Toolset</h2>
+
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg border-t-4 border-gold card">
+                    <div class="grid md:grid-cols-2 gap-8 text-gray-700">
+                        <!-- Data Manipulation & ML Libraries -->
+                        <div>
+                            <h4 class="text-xl font-semibold text-gray-900 mb-3 flex items-center"><i data-lucide="database" class="w-5 h-5 text-gold mr-2"></i>Data Science & ML</h4>
+                            <ul class="list-none space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i data-lucide="bookmark" class="w-3 h-3 text-gold mr-2 mt-1 flex-shrink-0"></i>
+                                    <div class="flex-grow flex">
+                                        <span class="font-bold w-[155px] flex-shrink-0">Python Libraries:</span>
+                                        <span class="flex-grow">Pandas, NumPy, Matplotlib, Seaborn.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="bookmark" class="w-3 h-3 text-gold mr-2 mt-1 flex-shrink-0"></i>
+                                    <div class="flex-grow flex">
+                                        <span class="font-bold w-[155px] flex-shrink-0">Machine Learning:</span>
+                                        <span class="flex-grow">Scikit-learn (Basic Models), TensorFlow/Keras (Conceptual).</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="bookmark" class="w-3 h-3 text-gold mr-2 mt-1 flex-shrink-0"></i>
+                                    <div class="flex-grow flex">
+                                        <span class="font-bold w-[155px] flex-shrink-0">Statistical Analysis:</span>
+                                        <span class="flex-grow">Hypothesis testing and Regression Analysis.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Visualization & Data Platforms -->
+                        <div>
+                            <h4 class="text-xl font-semibold text-gray-900 mb-3 flex items-center"><i data-lucide="line-chart" class="w-5 h-5 text-gold mr-2"></i>Visualization & Platforms</h4>
+                            <ul class="list-none space-y-2 text-sm">
+                                <li class="flex items-start">
+                                    <i data-lucide="bookmark" class="w-3 h-3 text-gold mr-2 mt-1 flex-shrink-0"></i>
+                                    <div class="flex-grow flex">
+                                        <span class="font-bold w-[155px] flex-shrink-0">Visualization Tools:</span>
+                                        <span class="flex-grow">Tableau (Familiarity), Google Sheets/Excel.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="bookmark" class="w-3 h-3 text-gold mr-2 mt-1 flex-shrink-0"></i>
+                                    <div class="flex-grow flex">
+                                        <span class="font-bold w-[155px] flex-shrink-0">Platforms:</span>
+                                        <span class="flex-grow">Jupyter Notebooks, Google Colab.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="bookmark" class="w-3 h-3 text-gold mr-2 mt-1 flex-shrink-0"></i>
+                                    <div class="flex-grow flex">
+                                        <span class="font-bold w-[155px] flex-shrink-0">Database Fundamentals:</span>
+                                        <span class="flex-grow">SQL (Basic Querying).</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section (Light Grey BG) -->
+        <section id="projects" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Selected Projects</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Project 1: Alzheimer's Nanoparticles (Interactive Card) -->
+                    <div class="card rounded-xl overflow-hidden border-b-4 border-gold hover:-translate-y-1">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-gray-900">Predictive Nanoparticle Efficacy Model</h3>
+                                <i data-lucide="brain" class="w-6 h-6 text-gold lucide-icon"></i>
+                            </div>
+                            <p class="text-gray-700 mb-4 text-sm">A foundational research project exploring the theoretical application and mechanism of nanoparticles, utilizing data analysis principles to model potential therapeutic efficacy in Alzheimer's disease pathways.</p>
+                            
+                            <p class="text-sm font-semibold text-gray-800 mt-4">Key Focus:</p>
+                            <span class="inline-block bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full mr-2 mb-2">Biomedical Research</span>
+                            <span class="inline-block bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full mr-2 mb-2">Molecular Modeling</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Poacher Detection (Interactive Card) -->
+                    <div class="card rounded-xl overflow-hidden border-b-4 border-gold hover:-translate-y-1">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-gray-900">Biodiversity Conservation: Poacher Detection</h3>
+                                <i data-lucide="leaf" class="w-6 h-6 text-gold lucide-icon"></i>
+                            </div>
+                            <p class="text-gray-700 mb-4 text-sm">Development of a working prototype using Arduino and infrared sensors to create an automated perimeter monitoring system, designed to detect unauthorized human entry in conserved biodiverse regions.</p>
+                            
+                            <p class="text-sm font-semibold text-gray-800 mt-4">Key Focus:</p>
+                            <span class="inline-block bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full mr-2 mb-2">Arduino/IoT</span>
+                            <span class="inline-block bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full mr-2 mb-2">Environmental Sensing</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Sensor Integration (Interactive Card) -->
+                    <div class="card rounded-xl overflow-hidden border-b-4 border-gold hover:-translate-y-1">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-gray-900">IoT Sensor Integration for Automation</h3>
+                                <i data-lucide="lightbulb" class="w-6 h-6 text-gold lucide-icon"></i>
+                            </div>
+                            <p class="text-gray-700 mb-4 text-sm">Implementation of basic electronic principles through touch and light sensors to demonstrate practical applications in automated lighting and rudimentary intrusion detection systems (beeping alarm).</p>
+                            
+                            <p class="text-sm font-semibold text-gray-800 mt-4">Key Focus:</p>
+                            <span class="inline-block bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full mr-2 mb-2">Electronics & Circuits</span>
+                            <span class="inline-block bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full mr-2 mb-2">System Prototyping</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Certifications (White BG) - TIMELINE SPINE MAINTAINED -->
+        <section id="experience" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Experience & Development</h2>
+                
+                <!-- Added relative positioning and a decorative spine for visual flow -->
+                <div class="grid md:grid-cols-2 gap-12 relative max-w-6xl mx-auto">
+                    
+                    <!-- Decorative Timeline Line (visible on desktop) -->
+                    <div class="absolute inset-y-0 left-1/2 hidden md:block w-0.5 bg-gray-200 -ml-0.5 z-0"></div>
+                    
+                    <!-- Left Column: Internships & Volunteer -->
+                    <div class="md:pr-10 relative z-10">
+                        <h3 class="text-3xl font-semibold text-gray-900 mb-6 border-b pb-2 border-gold/50">Professional Experience</h3>
+                        
+                        <div class="space-y-6">
+                            
+                            <!-- KIIT Internship -->
+                            <div class="p-6 bg-white rounded-xl shadow-md border-l-4 border-gold hover:shadow-lg transition-all duration-300 card">
+                                <h4 class="text-xl font-semibold text-gray-900">Molecular Diagnostics Intern</h4>
+                                <p class="text-sm text-gray-600 mb-2">KIIT-TBI (On-site)</p>
+                                <p class="text-gray-700 text-sm">Gained hands-on experience with <strong>PCR, RT-PCR, ELISA, and Flow Cytometry</strong>. Conducted experiments focusing on <strong>Salmonella pathogenicity</strong> to assist in local disease surveillance efforts and preliminary diagnostics.</p>
+                            </div>
+                            
+                            <!-- Anti-Viral Vaccine Design (EXPANDED) -->
+                            <div class="p-6 bg-white rounded-xl shadow-md border-l-4 border-gold hover:shadow-lg transition-all duration-300 card">
+                                <h4 class="text-xl font-semibold text-gray-900">Computational Vaccine Design & Antibiotic Resistance Modeling</h4>
+                                <p class="text-sm text-gray-600 mb-2">Ethical Edufabrica (Remote) in Assoc. with AIIMS Delhi | <span class="font-bold text-gray-800">Computational Focus</span></p>
+                                <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm mt-3">
+                                    <li>Applied <strong>basic machine learning algorithms</strong> (e.g., logistic regression) to large genomic datasets to predict antibiotic resistance patterns in bacterial strains.</li>
+                                    <li>Utilized <strong>Bioinformatics principles</strong> to model potential anti-viral vaccine epitopes, focusing on high-immunogenicity regions for T-cell activation.</li>
+                                    <li>Developed a data-driven report on <strong>mitigation strategies</strong> for emerging resistant strains, translating computational findings into actionable biological recommendations.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Medical Microbiology -->
+                            <div class="p-6 bg-white rounded-xl shadow-md border-l-4 border-gold hover:shadow-lg transition-all duration-300 card">
+                                <h4 class="text-xl font-semibold text-gray-900">Medical Microbiology and Immunology</h4>
+                                <p class="text-sm text-gray-600 mb-2">Ethical Edufabrica (Remote) in Assoc. with AIIMS Delhi</p>
+                                <p class="text-gray-700 text-sm">Developed theoretical <strong>Vaccine Design Strategies for Emerging Viruses</strong>, focusing on immunological mechanisms and computational target identification.</p>
+                            </div>
+
+                            <!-- Volunteer Role -->
+                            <div class="p-6 bg-white rounded-xl shadow-md border-l-4 border-gold hover:shadow-lg transition-all duration-300 card">
+                                <h4 class="text-xl font-semibold text-gray-900">Volunteer Educator</h4>
+                                <p class="text-sm text-gray-600 mb-2">AASHRA Foundation (NGO)</p>
+                                <p class="text-gray-700 text-sm">Taught English to children from basic alphabets and poems, and actively assisted in food distribution and community support activities.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Certifications & Achievements -->
+                    <div class="md:pl-10 relative z-10">
+                        <h3 class="text-3xl font-semibold text-gray-900 mb-6 border-b pb-2 border-gold/50">Certifications & Achievements</h3>
+                        
+                        <!-- Certifications -->
+                        <div class="mb-8">
+                            <h4 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center"><i data-lucide="award" class="w-5 h-5 text-gray-600 mr-2 lucide-icon"></i>Certifications</h4>
+                            <ul class="space-y-3">
+                                <li class="text-gray-700 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-gold mr-2 lucide-icon"></i>Technology Job Simulation (Deloitte/Forage)</li>
+                                <li class="text-gray-700 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-gold mr-2 lucide-icon"></i>Machine Learning using Python (NIELIT)</li>
+                                <li class="text-gray-700 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-gold mr-2 lucide-icon"></i>Intro to Programming & Feature Engineering (Kaggle)</li>
+                                <li class="text-gray-700 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-gold mr-2 lucide-icon"></i>Python (Kaggle)</li>
+                                <li class="text-gray-700 flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-gold mr-2 lucide-icon"></i>Information Security (Saylor)</li>
+                            </ul>
+                        </div>
+
+                        <!-- Achievements -->
+                        <div class="mb-8">
+                            <h4 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center"><i data-lucide="trophy" class="w-5 h-5 text-gray-600 mr-2 lucide-icon"></i>Key Achievements</h4>
+                            <ul class="space-y-3">
+                                <li class="text-gray-700">
+                                    <span class="font-medium text-gold">Poster Presentation:</span> Presented on "AI and Machine Learning for Predictive Modelling in Human Disease" at the International Conference on Bioinnovate.
+                                </li>
+                                <li class="text-gray-700">
+                                    <span class="font-medium text-gold">Kaggle Intensive:</span> Participated in the 5-Day <strong>Google and Kaggle Agents Intensive Course</strong>, gaining crucial insights into model building and quality improvement.
+                                </li>
+                                <li class="text-gray-700">
+                                    <span class="font-medium text-gold">Data Competition:</span> Competed in the Kaggle Predict Loan Payback challenge, applying data science techniques to a real-world financial problem.
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (Dark Frame) -->
+        <section id="contact" class="py-20 bg-gray-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mb-10">I am actively seeking opportunities in Data Analytics, Data Science, and Research. Feel free to reach out via email or connect with me on LinkedIn.</p>
+                
+                <a href="mailto:tanushree.12324560@lpu.in" class="inline-flex items-center bg-gold text-gray-900 font-semibold text-lg px-8 py-3 rounded-full hover-bg-gold transition-all duration-300 shadow-xl transform hover:scale-[1.02]">
+                    <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
+                    Email Me: tanushree.12324560@lpu.in
+                </a>
+
+                <div class="flex justify-center space-x-6 mt-10">
+                    <a href="https://www.linkedin.com/in/tanushree-nayak-" target="_blank" class="text-gray-400 hover:text-gold transition-all duration-300">
+                        <i data-lucide="linkedin" class="w-8 h-8"></i>
+                    </a>
+                    <a href="https://github.com/tanunshree" target="_blank" class="text-gray-400 hover:text-gold transition-all duration-300">
+                        <i data-lucide="github" class="w-8 h-8"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Dark Frame) -->
+    <footer class="bg-gray-900 py-6 border-t border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
+            &copy; <span id="current-year"></span> Tanushree Nayak. Designed with White, Black, Grey & <span class="text-gold">Gold</span>.
+        </div>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling, year update, and mobile menu -->
+    <script>
+        // Initialize Lucide Icons (must be called after DOM load)
+        lucide.createIcons();
+
+        // Dynamic Year Update
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hide mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Function to ensure smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+        
+                let headerHeight = document.querySelector('nav').offsetHeight;
+        
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - headerHeight, // Subtract header height
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
